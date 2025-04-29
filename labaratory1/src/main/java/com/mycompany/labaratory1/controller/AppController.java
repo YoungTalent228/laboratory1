@@ -35,7 +35,7 @@ public class AppController {
                 model.importFromExcel(chooser.getSelectedFile());
                 view.getOutputArea().setText("Данные успешно загружены.");
             } catch (Exception e) {
-                Error.showError("Ошибка импорта: " + e.getMessage());
+                Error.showError("Ошибка импорта, необходимо выбрать файл Excel: ");
             }
         }
     }

@@ -74,7 +74,7 @@ public class AppView extends JFrame {
             if (level <= 0 || level >= 1) throw new IllegalArgumentException("Уровень доверия должен быть между 0 и 1.");
             return level;
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Некорректный формат числа.");
+            throw new IllegalArgumentException("Необходимо ввести уровень доверия.");
         }
     }
 
