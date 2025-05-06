@@ -63,13 +63,15 @@ public class DataModel {
             }
 
             FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
-            for (Row row : sheet) {
+            for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) { 
+                Row row = sheet.getRow(rowIndex);
+                if (row == null) continue; 
                 for (int i = 0; i < numColumns; i++) {
                     Cell cell = row.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
                     double value = parseCellValue(cell, evaluator);
                     data.get(i).add(value);
+                   }
                 }
-            }
 
         } catch (IllegalArgumentException e) {
             throw new IOException("Ошибка структуры файла: " + e.getMessage());

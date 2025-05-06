@@ -31,7 +31,7 @@ public class Statistics {
             double stdDev = stats.getStandardDeviation();
             double range = stats.getMax() - stats.getMin();
             double count = stats.getN();
-            double coefficientOfVariation = (stdDev / mean) * 100;
+            double coefficientOfVariation = (stdDev / mean);
             double min = stats.getMin();
             double max = stats.getMax();
             double variance = stats.getVariance();
