@@ -54,7 +54,7 @@ public class DataModel {
 
             Sheet sheet = workbook.getSheet(selectedSheet);
             clearData(); 
-
+            
             int numColumns = sheet.getRow(0).getPhysicalNumberOfCells();
             validateSheetStructure(sheet, numColumns);
 
@@ -63,6 +63,7 @@ public class DataModel {
             }
 
             FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
+            evaluator.evaluateAll();
             for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) { 
                 Row row = sheet.getRow(rowIndex);
                 if (row == null) continue; 
